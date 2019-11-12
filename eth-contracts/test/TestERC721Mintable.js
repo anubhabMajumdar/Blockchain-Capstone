@@ -1,3 +1,64 @@
+var OwnableContract = artifacts.require('Ownable');
+
+contract('OwnableContract', accounts => {
+
+    const account_one = accounts[0];
+    const account_two = accounts[1];
+    const account_three = accounts[2];
+
+    describe('check ownable properties', function () {
+        beforeEach(async function () { 
+            this.contract = await OwnableContract.new({from: account_one});
+        })
+
+        it('getOwner should work', async function () { 
+            curOwner = await this.contract.getOwner.call();
+            assert.equal(curOwner, account_one, 'Error: Owner not matched.')
+        })
+
+        it('getOwner should not match account two', async function () { 
+            curOwner = await this.contract.getOwner.call();
+            check = curOwner==account_two
+            assert.equal(check, false, 'Error: Owner matched.')
+        })
+
+        it('transferOwner should work', async function () { 
+            try {
+                await this.contract.transferOwnership(account_two, {from: account_one});
+            } catch (error) {
+                
+            }
+            curOwner = await this.contract.getOwner.call();
+            assert.equal(curOwner, account_two, 'Error: Owner not matched.')
+        })
+
+        it('transferOwner should fail I', async function () { 
+            try {
+                await this.contract.transferOwnership(account_three, {from: account_two});
+            } catch (error) {
+            
+            }
+            curOwner = await this.contract.getOwner.call();
+            check = curOwner == account_three;
+            assert.equal(curOwner, account_one, 'Error: Owner should not change.')
+            assert.equal(check, false, 'Error: Owner should not change.')
+        })
+
+        it('transferOwner should fail II', async function () { 
+            check = false;
+            try {
+                await this.contract.transferOwnership(account_one, {from: account_one});
+            } catch (error) {
+                check = true;
+            }
+            curOwner = await this.contract.getOwner.call();
+            assert.equal(curOwner, account_one, 'Error: Owner should not change.')
+            assert.equal(check, true, 'Error: Owner should not change.')
+        })
+
+    });
+})
+
 var ERC721MintableComplete = artifacts.require('ERC721Enumerable');
 
 contract('TestERC721Mintable', accounts => {
