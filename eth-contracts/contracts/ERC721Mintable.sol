@@ -28,7 +28,7 @@ contract Ownable {
     }
 
     //  4) fill out the transferOwnership function
-    function b (address newOwner) public onlyOwner {
+    function transferOwnership(address newOwner) public onlyOwner {
         // TODO add functionality to transfer control of the contract to a newOwner.
         // make sure the new owner is a real address
         require(newOwner!=getOwner(), "New owner expected to transfer ownership.");
@@ -41,15 +41,43 @@ contract Ownable {
 }
 
 //  TODO's: Create a Pausable contract that inherits from the Ownable contract
-contract Pausable {
-//  1) create a private '_paused' variable of type bool
-//  2) create a public setter using the inherited onlyOwner modifier 
-//  3) create an internal constructor that sets the _paused variable to false
-    constructor () internal {
-        return;
+contract Pausable is Ownable {
+    //  1) create a private '_paused' variable of type bool
+    bool private _paused;
+
+    //  2) create a public setter using the inherited onlyOwner modifier
+    function setPaused(bool value) public onlyOwner {
+        _paused = value;
+        if (value) {
+            emit Paused(msg.sender);
+        } else {
+            emit Unpaused(msg.sender);
+        }
     }
-//  4) create 'whenNotPaused' & 'paused' modifier that throws in the appropriate situation
-//  5) create a Paused & Unpaused event that emits the address that triggered the event
+
+    // function getPaused() public returns(bool) {
+    //     return _paused;
+    // }
+
+    //  3) create an internal constructor that sets the _paused variable to false
+    constructor () internal {
+        setPaused(false);
+    }
+
+    //  4) create 'whenNotPaused' & 'paused' modifier that throws in the appropriate situation
+    modifier whenNotPaused() {
+        require(!_paused, "Contract should NOT be paused.");
+        _;
+    }
+
+    modifier paused() {
+        require(_paused, "Contract should be paused.");
+        _;
+    }
+
+    //  5) create a Paused & Unpaused event that emits the address that triggered the event
+    event Paused(address user);
+    event Unpaused(address user);
 }
 
 contract ERC165 {
