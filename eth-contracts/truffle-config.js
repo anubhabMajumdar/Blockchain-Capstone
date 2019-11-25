@@ -54,8 +54,8 @@ module.exports = {
      rinkeby: {
       provider: () => new HDWalletProvider(metamaskKey, rinkebyInfuraKey),
       network_id: 4,       // rinkeby's id
-      // gas: 10000000,        // rinkeby has a lower block limit than mainnet
-      // gasPrice: 10000000000,
+      // gas: 4500000,        // rinkeby has a lower block limit than mainnet
+      gasPrice: 21000000000,
     },
 
     ropsten: {
@@ -102,7 +102,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
+      // version: "^0.5.5",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {

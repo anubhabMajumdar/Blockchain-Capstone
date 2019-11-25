@@ -4,10 +4,8 @@ var SolnSquareVerifier = artifacts.require("./SolnSquareVerifier.sol");
 const fs = require('fs');
 
 module.exports = function(deployer) {
-  deployer.deploy(SquareVerifier)
-  .then(() => {
-    deployer.deploy(SolnSquareVerifier, SquareVerifier.address)
-    .then(() => {
+  deployer.deploy(SquareVerifier).then(() => {
+    return deployer.deploy(SolnSquareVerifier, SquareVerifier.address).then(() => {
       let config = {
         localhost: {
             url: 'http://localhost:7545',
