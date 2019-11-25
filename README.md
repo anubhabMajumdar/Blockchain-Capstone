@@ -61,12 +61,15 @@ user@~/Udacity-Blockchain/Blockchain-Capstone/eth-contracts/test $ truffle test 
 
 ## Tokens
 [Minted 11 tokens](Screenshots/tokens.png)
+
 [Etherscan](https://rinkeby.etherscan.io/address/0x1f27760d5c097ab2e4f59ec5125c10eb44c97820)
 
 ## Openseas
 [Listed tokens](https://rinkeby.opensea.io/accounts/0x1f27760d5c097ab2e4f59ec5125c10eb44c97820)
 
 [Sold token](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/10?)
+
+[Sold token Etherscan](https://rinkeby.etherscan.io/tx/0xb2f9811701c8cfadbdf03870d3ab70942867df497f90b07a4dc1d4eb99f9d06d)
 
 
 # Project Resources
