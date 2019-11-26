@@ -1,7 +1,7 @@
 {
 	"localhost": {
 		"url": "http://localhost:7545",
-		"verifierAddress": "0xC69B24b3e739288BE198b1FAAFeFb72c1cE22d43",
-		"solnVerifierAddress": "0x658b353eA3c85E69c42aaf11025e046e6f394191"
+		"verifierAddress": "0xD881f38b7123b600c43262877932207D95b46940",
+		"solnVerifierAddress": "0x9E9245d9a3D7716E88485144fa27fa614EbDBaA6"
 	}
 }

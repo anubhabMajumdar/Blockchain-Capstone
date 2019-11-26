@@ -4,18 +4,26 @@ The capstone will build upon the knowledge you have gained in the course in orde
 
 # Usage
 
+## Truffle version
+
+`Truffle v5.0.43`
+
+## Get the repository
+
+```
+git clone https://github.com/anubhabMajumdar/Blockchain-Capstone.git
+
+cd Blockchain-Capstone/eth-contracts/
+```
+
 ## Compile
 ```
-user@~/Udacity-Blockchain/Blockchain-Capstone/eth-contracts/test $ truffle compile
+truffle compile
 ```
 
 ## Unit Test
 ```
-user@~/Udacity-Blockchain/Blockchain-Capstone/eth-contracts/test $ truffle test ./TestERC721Mintable.js 
-
-user@~/Udacity-Blockchain/Blockchain-Capstone/eth-contracts/test $ truffle test ./TestSquareVerifier.js
-
-user@~/Udacity-Blockchain/Blockchain-Capstone/eth-contracts/test $ truffle test ./TestSolnSquareVerifier.js 
+truffle test
 ```
 
 ## Deployed on Rinkeby
@@ -65,7 +73,12 @@ user@~/Udacity-Blockchain/Blockchain-Capstone/eth-contracts/test $ truffle test 
 [Etherscan](https://rinkeby.etherscan.io/address/0x1f27760d5c097ab2e4f59ec5125c10eb44c97820)
 
 ## Openseas
-[Listed tokens](https://rinkeby.opensea.io/accounts/0x1f27760d5c097ab2e4f59ec5125c10eb44c97820)
+
+[OpenSea MarketPlace Storefront](https://rinkeby.opensea.io/assets)
+
+[OpenSea MarketPlace Storefront screenshot](Screenshots/storefront.png)
+
+[Tokens minted](https://rinkeby.opensea.io/accounts/0x1f27760d5c097ab2e4f59ec5125c10eb44c97820)
 
 [Sold token](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/10?)
 

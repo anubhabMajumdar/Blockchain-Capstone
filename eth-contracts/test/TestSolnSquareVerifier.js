@@ -1,8 +1,7 @@
 var fs = require('fs');
-var config = JSON.parse(fs.readFileSync('config.json', 'utf8'));
-console.log(config);
+var config = JSON.parse(fs.readFileSync(__dirname + '/config.json', 'utf8'));
 
-var obj = JSON.parse(fs.readFileSync('proof.json', 'utf8'));
+var obj = JSON.parse(fs.readFileSync(__dirname + '/proof.json', 'utf8'));
 var a = obj['proof']['a'];
 var a_p = obj['proof']['a_p'];
 var b = obj['proof']['b'];
@@ -13,7 +12,7 @@ var h = obj['proof']['h'];
 var k = obj['proof']['k'];
 var input = obj['inputs'];
 
-var obj2 = JSON.parse(fs.readFileSync('proof_error.json', 'utf8'));
+var obj2 = JSON.parse(fs.readFileSync(__dirname + '/proof_error.json', 'utf8'));
 var a2 = obj2['proof']['a'];
 var a_p2 = obj2['proof']['a_p'];
 var b2 = obj2['proof']['b'];
