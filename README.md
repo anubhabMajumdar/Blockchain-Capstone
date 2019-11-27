@@ -74,9 +74,7 @@ truffle test
 
 ## Openseas
 
-[OpenSea MarketPlace Storefront](https://rinkeby.opensea.io/assets)
-
-[OpenSea MarketPlace Storefront screenshot](Screenshots/storefront.png)
+[OpenSea MarketPlace Storefront](https://rinkeby.opensea.io/assets/unidentified-contract-614)
 
 [Tokens minted](https://rinkeby.opensea.io/accounts/0x1f27760d5c097ab2e4f59ec5125c10eb44c97820)
 
