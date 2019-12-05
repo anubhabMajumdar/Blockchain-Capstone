@@ -40,7 +40,7 @@ contract('TestSolnSquareVerifier', accounts => {
             this.contract = await SolnSquareVerifierContract.new(config.localhost.verifierAddress);
         })
 
-        it('new solution can be added', async function () { 
+        it('No solution present on initialize', async function () { 
             assert(this.contract.getSolutionsLength.call(), 0, "Initial length should be zero");
         })
 

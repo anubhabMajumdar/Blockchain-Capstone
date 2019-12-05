@@ -78,7 +78,17 @@ truffle test
 
 [Tokens minted](https://rinkeby.opensea.io/accounts/0x1f27760d5c097ab2e4f59ec5125c10eb44c97820)
 
-[Sold token](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/10?)
+Buyer A/C : `0x7c569ee0296a9b02cf34a2180207352fed9b86bd`
+
+[Sold token 1](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/10?)
+
+[Sold token 2](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/3)
+
+[Sold token 3](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/4)
+
+[Sold token 4](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/6?)
+
+[Sold token 5](https://rinkeby.opensea.io/assets/0x658b353ea3c85e69c42aaf11025e046e6f394191/7?)
 
 [Sold token Etherscan](https://rinkeby.etherscan.io/tx/0xb2f9811701c8cfadbdf03870d3ab70942867df497f90b07a4dc1d4eb99f9d06d)
 
