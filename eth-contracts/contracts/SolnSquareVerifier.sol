@@ -27,21 +27,6 @@ contract VerifierContract {
         }
 }
 
-// contract SquareVerifier {
-//     function verifyTx(
-//             uint[2] memory a,
-//             uint[2] memory a_p,
-//             uint[2][2] memory b,
-//             uint[2] memory b_p,
-//             uint[2] memory c,
-//             uint[2] memory c_p,
-//             uint[2] memory h,
-//             uint[2] memory k,
-//             uint[2] memory input
-//         ) public returns (bool r);
-// }
-
-
 // TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
 contract SolnSquareVerifier is CustomERC721Token {
 
