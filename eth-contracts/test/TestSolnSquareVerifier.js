@@ -29,7 +29,7 @@ var SolnSquareVerifierContract = artifacts.require('SolnSquareVerifier');
 
 // Test if an ERC721 token can be minted for contract - SolnSquareVerifier
 
-contract('SolnSquareVerifier', accounts => {
+contract('TestSolnSquareVerifier', accounts => {
 
     const account_one = accounts[0];
     const token = 1;
@@ -68,12 +68,12 @@ contract('SolnSquareVerifier', accounts => {
         it('Same solution cannot be used', async function () { 
             flag = true
             try {
-                flag = await this.contract.mint(a, a_p, b, b_p, c, c_p, h, k, input, token, account_one);
-                flag = await this.contract.mint(a, a_p, b, b_p, c, c_p, h, k, input, token2, account_one);
+                await this.contract.mint(a, a_p, b, b_p, c, c_p, h, k, input, token, account_one);
+                await this.contract.mint(a, a_p, b, b_p, c, c_p, h, k, input, token2, account_one);
             } catch (error) {
                 flag = false
             }
-            assert(flag, false, "Token should not be minted with same solution.");
+            assert(!flag, "Token should not be minted with same solution.");
         })
     });
 })

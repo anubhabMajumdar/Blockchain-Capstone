@@ -2,6 +2,7 @@ pragma solidity >=0.4.21 <0.6.0;
 pragma experimental ABIEncoderV2;
 
 import "./ERC721Mintable.sol";
+import "./SquareVerifier.sol";
 
 // TODO define a contract call to the zokrates generated solidity contract <Verifier> or <renamedVerifier>
 contract VerifierContract {
@@ -26,19 +27,19 @@ contract VerifierContract {
         }
 }
 
-contract SquareVerifier {
-    function verifyTx(
-            uint[2] memory a,
-            uint[2] memory a_p,
-            uint[2][2] memory b,
-            uint[2] memory b_p,
-            uint[2] memory c,
-            uint[2] memory c_p,
-            uint[2] memory h,
-            uint[2] memory k,
-            uint[2] memory input
-        ) public returns (bool r);
-}
+// contract SquareVerifier {
+//     function verifyTx(
+//             uint[2] memory a,
+//             uint[2] memory a_p,
+//             uint[2][2] memory b,
+//             uint[2] memory b_p,
+//             uint[2] memory c,
+//             uint[2] memory c_p,
+//             uint[2] memory h,
+//             uint[2] memory k,
+//             uint[2] memory input
+//         ) public returns (bool r);
+// }
 
 
 // TODO define another contract named SolnSquareVerifier that inherits from your ERC721Mintable class
@@ -104,7 +105,7 @@ contract SolnSquareVerifier is CustomERC721Token {
         uint256 tokenId,
         address to
     ) public returns (bool) {
-        bytes32 key = keccak256(abi.encode(a, a_p, b, b_p, c, c_p, h, k, input, tokenId, to));
+        bytes32 key = keccak256(abi.encode(a, a_p, b, b_p, c, c_p, h, k, input));
         require(mapSolutions[key]==0, "Solution not unique.");
         require(verifierContract.verifyTx(a, a_p, b, b_p, c, c_p, h, k, input), "Cannot verify solution.");
         require(super.mint(to, tokenId, "ABC"), "Cannot mint token.");
